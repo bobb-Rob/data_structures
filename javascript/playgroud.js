@@ -103,4 +103,12 @@ function gradingStudents(grades) {
   return result;
 }
 
-console.log(gradingStudents([80, 84,23,38,33, 96, 73]))
+function gradingStudent(grades) {
+  // this solution has a time complexity of O(n) but space complexity is reduced from O(n) to O(1)
+  for(let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 38 && grades[i] % 5 >= 3) grades[i] = grades[i] + (5 - (grades[i] % 5));
+  }
+  return grades;
+}
+
+console.log(gradingStudent([80, 84,23,38,33, 96, 73]))
