@@ -72,16 +72,35 @@ function timeConversion(s) {
 
 // timeConversion('05:05:45AM')
 
-function gradingStudents(grades) {
-  // Write your code here
-  // diffrence btw grade and Next multiple of 5 is less than 3, round grade up to the next multiple of 5
-  // if grade is less than, no rounding occurs
-  for(let i = 0; i < grades.length; i++) {
-    let grade = grades[i];
-    if (grade % 5 === 3) {
-      console.log(grade)
-    }
+// function gradingStudents(grades) {
+//   // Write your code here
+//   // diffrence btw grade and Next multiple of 5 is less than 3, round grade up to the next multiple of 5
+//   // if grade is less than, no rounding occurs
+//   let result = [];
+//   for(let i = 0; i < grades.length; i++) {
+//     let grade = grades[i];    
+//     if (grade >= 38) {
+//       if (grade % 5 === 4) result.push(grade + 1);
+//       if (grade % 5 === 3) result.push(grade + 2);
+//       if (grade % 5 === 2 ) result.push(grade)
+//       if (grade % 5 === 1 ) result.push(grade)
+//       if (grade % 5 === 0 ) result.push(grade)
+//     } else {
+//       result.push(grade)
+//     }
+//   }
+//   return result;
+// }
 
+function gradingStudents(grades) {
+  let result = [];
+  for(let grade of grades) {
+    if (grade >= 38 && grade % 5 >= 3) {
+      grade = grade + (5 - (grade % 5));
+    }
+    result.push(grade);
   }
+  return result;
 }
 
+console.log(gradingStudents([80, 84,23,38,33, 96, 73]))
