@@ -70,7 +70,18 @@ function timeConversion(s) {
   return newTime; 
 }
 
-timeConversion('05:05:45AM')
+// timeConversion('05:05:45AM')
 
+function gradingStudents(grades) {
+  // Write your code here
+  // diffrence btw grade and Next multiple of 5 is less than 3, round grade up to the next multiple of 5
+  // if grade is less than, no rounding occurs
+  for(let i = 0; i < grades.length; i++) {
+    let grade = grades[i];
+    if (grade % 5 === 3) {
+      console.log(grade)
+    }
 
+  }
+}
 
