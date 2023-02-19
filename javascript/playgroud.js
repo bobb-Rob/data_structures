@@ -111,4 +111,5 @@ function gradingStudent(grades) {
   return grades;
 }
 
-console.log(gradingStudent([80, 84,23,38,33, 96, 73]))
+// console.log(gradingStudent([80, 84,23,38,33, 96, 73]))
+
