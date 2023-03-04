@@ -85,6 +85,20 @@ class SinglyLinkedList {
     return current;
   }
 
+  updateAtPosition(val, position) {
+    if (position < 0 || position >= this.size) return;
+  
+    let current = this.head;
+    let index = 0;
+
+    while (index < position) {    
+      current = current.next;
+      index++;
+    }
+
+    current.value = val;    
+  }
+
   printItems() {
     let current = this.head;   
   
@@ -99,14 +113,12 @@ class SinglyLinkedList {
   }
 }
 
+const list1 = new SinglyLinkedList();
+const list2 = new SinglyLinkedList();
+list1.addToHead(1);
+list1.addToTail(3);
+list1.addToTail(7);
+list2.addToHead(1);
+list2.addToTail(2);
 
-const list = new SinglyLinkedList();
-list.addToHead([1,2,3]);
-list.addToTail([11,22,33]);
-list.addToTail([111,222,333]);
-list.insertAtNthPosition([89,56], 3);
-list.insertAtNthPosition([933,890], 3);
-list.printItems();
-console.log(list.deleteAtPosition(3));
-list.printItems();
-console.log(list);
+module.exports = { list1, list2 };
